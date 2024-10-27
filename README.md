@@ -2,7 +2,7 @@
 
 Game made by Ilian BEN HAMOU, Bachelor 1 Cybersecurity.
 
-[![⚙️ ◄| Project instructions |► 🎓]](https://github.com/Lyon-Ynov-Campus/YTrack/tree/master/subjects/hangman/hangman-classic){.btn .btn-info}
+[⚙️ ◄| Project instructions |► 🎓](https://github.com/Lyon-Ynov-Campus/YTrack/tree/master/subjects/hangman/hangman-classic)
 
 ## Description
 
