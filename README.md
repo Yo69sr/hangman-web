@@ -12,7 +12,7 @@ This project is a classic implementation of the Hangman game in Go (Golang). The
 - [Game Rules](#game-rules)
 - [Packages Used](#packages-used)
 - [Installation](#installation)
-- [Structuration du fichier](#structuration-du-fichier)
+- [Project Structure](#project-structure)
 - [Usage](#usage)
 
 
@@ -56,31 +56,31 @@ git clone https://github.com/noshagit/hangman-classic.git
 cd hangman-classic
 ```
 
-## Structuration du fichier
+## Project Structure
 
-### Fichier Golang 
+### Go Files
 
-- **main.go**: main.go contient Le main de mon jeu, la fonction qui sera lu par mon ordinateur.
-- **annexe.go**: annexe.go contient toutes les fonctions annexe que j'ai crée sans qu'elles soient forcément demandé. Je les ai crée pour mon confort personnel et surtout pour un confort visuel.
-- **asciiart.go**: asciiart.go contient toutes les fonctions permettant l'affichage de José ( le Pendu ) ou d'un message en ASCII art.
-- **hangman.go**: hangman.go contient La fonction principal de mon jeu ainsi que la création du type de structure que j'ai utilisé.
-- **init.go**: init.go permet de remplir toutes les variables que j'ai créer dans mon hangman.go.
-- **input.go**: input.go contient toutes les fonctions gérant les entrées utilisateurs.
-- **startandstop.go**: startandstop.go contient toutes les fonctions utilisés pour les sauvegardes et chargements d'une partie.
-- **verif.go**: verif.go a comme objectif de contenir toutes mes fonctions de vérification et de renvoi de booléen.
+- **main.go**: Contains the main function of the game, which will be executed by the computer.
+- **annexe.go**: Includes auxiliary functions created for personal convenience and code readability, even if they are not strictly necessary.
+- **asciiart.go**: Contains all functions for displaying José (the Hangman) or other messages in ASCII art.
+- **hangman.go**: Houses the main logic of the game as well as the definition of the data structures used.
+- **init.go**: Used to initialize all the variables defined in `hangman.go`.
+- **input.go**: Groups all functions that handle user inputs.
+- **startandstop.go**: Contains functions used for saving and loading a game.
+- **verif.go**: Intended to hold all verification functions and return booleans.
 
-### Fichier .txt
+### .txt Files
 
-- **words.txt**: words.txt regroupe l'ensemble des mots pour la difficulté "easy".
-- **words2.txt**: words2.txt regroupe l'ensemble des mots pour la difficulté "medium".
-- **words3.txt**: words3.txt regroupe l'ensemble des mots pour la difficulté "hard".
-- **hangman.txt**: hangman.txt contient tous les dessins/position en ASCII art de José, le pendu.
-- **standard.txt**: standard.txt lui contiendra tous les dessins en ASCII art excepté José, il y aura quelques ponctuations, les lettres en majuscule et minuscule ainsi que les chiffres.
-- **save.txt**: Fichier qui sera crée lors d'une sauvegarde de jeu, et supprimé à la fin d'une partie contenant toutes les informations stockées dans une structure.
+- **words.txt**: Contains the words for the "easy" difficulty level.
+- **words2.txt**: Contains the words for the "medium" difficulty level.
+- **words3.txt**: Contains the words for the "hard" difficulty level.
+- **hangman.txt**: Contains ASCII art drawings/positions of José, the Hangman.
+- **standard.txt**: Includes various ASCII art drawings, featuring some punctuation, uppercase and lowercase letters, as well as numbers.
+- **save.txt**: A file created during game saving, which will be deleted at the end of the game. It contains all information stored in a structure.
 
-### Les autres fichiers
+### Other Files
 
-- **go.mod**: go.mod définis un nom de module "hangman" permettant d'appeler les fonctions contenu dans le ce module dans d'autre fichier ne començant pas par "package hangman".
+- **go.mod**: Defines the module name as "hangman," allowing the functions within this module to be called from other files not starting with "package hangman."
 
 ## Usage
 
