@@ -2,7 +2,7 @@
 
 Game made by Ilian BEN HAMOU, Bachelor 1 Cybersecurity.
 
-[![⚙️ ◄| Project instructions |► 🎓](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://github.com/Lyon-Ynov-Campus/YTrack/tree/master/subjects/hangman/hangman-classic)
+[![⚙️ ◄| Project instructions |► 🎓]](https://github.com/Lyon-Ynov-Campus/YTrack/tree/master/subjects/hangman/hangman-classic)
 
 ## Description
 
@@ -98,6 +98,6 @@ if you want to load from a previous game use this command, "filename" is the nam
 go run main/main.go --startWith filename
 ```
 
-❗[color=#ff0000]WARNING[/color]! If your save file has spaces between the words, remember to enclose the filename in quotes, like this: "filename". If you don't do this, it will not work and will display an error message.
+❗WARNING❗If your save file has spaces between the words, remember to enclose the filename in quotes, like this: "filename". If you don't do this, it will not work and will display an error message.
 
 Good luck and have fun playing Hangman!
