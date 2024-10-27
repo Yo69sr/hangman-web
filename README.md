@@ -12,7 +12,7 @@ This project is a classic implementation of the Hangman game in Go (Golang). The
 - [Game Rules](#game-rules)
 - [Packages Used](#packages-used)
 - [Installation](#installation)
-- []()
+- [Structuration du fichier](#structuration-du-fichier)
 - [Usage](#usage)
 
 
