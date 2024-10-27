@@ -2,7 +2,7 @@
 
 Game made by Ilian BEN HAMOU, Bachelor 1 Cybersecurity.
 
-[![Project instructions](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://github.com/Lyon-Ynov-Campus/YTrack/tree/master/subjects/hangman/hangman-classic)
+[![⚙️ ◄| Project instructions |► 🎓](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://github.com/Lyon-Ynov-Campus/YTrack/tree/master/subjects/hangman/hangman-classic)
 
 ## Description
 
@@ -21,7 +21,7 @@ This project is a classic implementation of the Hangman game in Go (Golang). The
 ## Features
 
 - **Difficulty Selection**: Players can choose from three difficulty levels: easy, medium, and hard.
-- **Save and Load**: Games can be saved to a file and loaded later.
+- **Save and Load**: Games can be saved to a file and loaded later. The name of the save file can be chosen by the user and will delete itself only when you finish the game that you saved by loading it. If the name has already been taken, the program will automatically add an index to avoid overwriting your previous save.
 - **ASCII Art**: Displays ASCII illustrations for the Hangman and messages for welcome, victory, or defeat.
 - **Letter Revelation**: A portion of the letters in the word can be randomly revealed at the start of the game.
 - **Debug Mode**: Option to display the answer during the game for development purposes.
@@ -92,10 +92,12 @@ Now, if you're ready to play:
 go run main/main.go
 ```
 
-if you want to load from a previous game use this command:
+if you want to load from a previous game use this command, "filename" is the name of the file you've created for your save file:
 
 ```bash
-go run main/main.go --startWith save.txt
+go run main/main.go --startWith filename
 ```
+
+❗[color=#ff0000]WARNING[/color]! If your save file has spaces between the words, remember to enclose the filename in quotes, like this: "filename". If you don't do this, it will not work and will display an error message.
 
 Good luck and have fun playing Hangman!

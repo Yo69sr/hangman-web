@@ -11,16 +11,16 @@ import (
 // Ce fichier contient toutes les fonctions annexe que j'ai crée sans qu'elles soient forcément demandé pour mon confort personnel //
 // =============================================================================================================================== //
 
-func RmFile() { // RmFile supprime le fichier de sauvegarde "save.txt" s'il existe à la fin d'une partie.
-	_, err := os.Stat("save.txt") // Vérifier si le fichier existe en utilisant os.Stat.
-	if os.IsNotExist(err) {       // Si le fichier n'existe pas, on sort de la fonction.
+func RmFile(filename string) { // RmFile supprime le fichier de sauvegarde "save.txt" s'il existe à la fin d'une partie.
+	_, err := os.Stat(filename) // Vérifier si le fichier existe en utilisant os.Stat.
+	if os.IsNotExist(err) {     // Si le fichier n'existe pas, on sort de la fonction.
 		return
 	} else if err != nil { // Gérer d'autres erreurs potentielles lors de la vérification.
 		fmt.Println("Error while checking the file:", err) // Affiche un message d'erreur.
 		return
 	}
-	err = os.Remove("save.txt") // Supprimer le fichier en utilisant os.Remove.
-	if err != nil {             // Gérer les erreurs lors de la suppression du fichier.
+	err = os.Remove(filename) // Supprimer le fichier en utilisant os.Remove.
+	if err != nil {           // Gérer les erreurs lors de la suppression du fichier.
 		fmt.Println("Error while deleting the file:", err) // Affiche un message d'erreur.
 		return
 	}

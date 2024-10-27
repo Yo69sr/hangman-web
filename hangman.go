@@ -24,6 +24,8 @@ type DataHang struct { // DataHang contient toutes les informations nécessaires
 
 func Play() { // Play gère les appels de fonctions pour le jeu du Pendu.
 	var debug bool
+	var filename string
+	var load bool
 	var err error
 	var message_bjr string = "HELLO!"
 	var message_gg string = "VICTORY!"
@@ -57,7 +59,8 @@ func Play() { // Play gère les appels de fonctions pour le jeu du Pendu.
 	flag.Parse()
 	var data *DataHang
 	if saveFile != "" { // Si un fichier de sauvegarde est fourni, on charge la partie sauvegardée.
-		data, err = Load(saveFile)
+		data, filename, err = Load(saveFile)
+		load = true
 		if err != nil {
 			fmt.Println("Error loading the save:", err) // Message d'erreur en cas d'échec de chargement de la sauvegarde.
 			return
@@ -207,5 +210,7 @@ func Play() { // Play gère les appels de fonctions pour le jeu du Pendu.
 		time.Sleep(1 * time.Second)
 	}
 	ClearT()
-	RmFile() // Supprime le fichier de sauvegarde à la fin, si il y en a un.
+	if load {
+		RmFile(filename) // Supprime le fichier de sauvegarde à la fin, si il y en a un.
+	}
 }

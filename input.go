@@ -45,8 +45,8 @@ func ValL(data *DataHang) string { // ValL demande à l'utilisateur de proposer 
 
 		if strings.ToUpper(proposition) == "STOP" { // Vérifie si l'utilisateur souhaite quitter le jeu
 
-			err := Save(data, "save.txt") // Sauvegarde l'état actuel du jeu dans un fichier
-			if err != nil {               // Affiche une erreur si la sauvegarde échoue
+			err := Save(data) // Sauvegarde l'état actuel du jeu dans un fichier
+			if err != nil {   // Affiche une erreur si la sauvegarde échoue
 				for i := 5; i > 0; i-- {
 					fmt.Println("Error while saving the game:", err)
 					time.Sleep(1 * time.Second)
@@ -55,7 +55,6 @@ func ValL(data *DataHang) string { // ValL demande à l'utilisateur de proposer 
 				}
 			} else {
 				for i := 5; i > 0; i-- { // Confirme que la partie a été sauvegardée avec succès
-					fmt.Println("Game saved in save.txt. See you soon!")
 					fmt.Printf("Closing the program in %d seconds.", i)
 					time.Sleep(1 * time.Second)
 					ClearT()
@@ -93,7 +92,7 @@ func ValL(data *DataHang) string { // ValL demande à l'utilisateur de proposer 
 				break
 			}
 			ClearT()
-			fmt.Printf("You have already used this word. %d attempts remaining.", data.Pv) // Indique que le mot a déjà été utilisé et affiche les tentatives restantes
+			fmt.Printf("You have already used this word. %d attempts remaining. \n", data.Pv) // Indique que le mot a déjà été utilisé et affiche les tentatives restantes
 			AffP(*data)
 			fmt.Println("Word:", data.Word)
 			fmt.Printf("Letters already used: %v\n", data.UsedL)
