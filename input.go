@@ -1,7 +1,6 @@
 package hangman
 
 import (
-	"bufio"
 	"fmt"
 	"os"
 	"strings"
@@ -13,27 +12,28 @@ import (
 // Ce fichier contient toutes les fonctions gérant les entrées utilisateurs //
 // ======================================================================== //
 
-func ChooseD() string { // ChooseD demande à l'utilisateur de sélectionner une difficulté pour le jeu du Pendu
-	ClearT()
-	for {
-		fmt.Println("Choose a difficulty: easy, medium, hard.")     // Affiche les options de difficulté à l'utilisateur
-		scanner := bufio.NewScanner(os.Stdin)                       // Crée un scanner pour capturer l'entrée de l'utilisateur depuis la console
-		scanner.Scan()                                              // Lit l'entrée de l'utilisateur
-		choix := strings.TrimSpace(strings.ToLower(scanner.Text())) // Normalise l'entrée : enlève les espaces et met en minuscules
-		mots := strings.Fields(choix)                               // Divise la chaîne d'entrée en mots basés sur les espaces
-		if len(mots) == 1 {                                         // Vérifie qu'il n'y a qu'un seul mot
-			switch mots[0] { // Compare le mot choisi à des options valides
-			case "easy", "medium", "hard": // Si le choix est valide
-				return mots[0]
-			default:
-				ClearT()
-				fmt.Println("Invalid choice, please choose between easy, medium, or hard.")
-			}
-		} else {
+func ChooseD(choix string) string { // ChooseD demande à l'utilisateur de sélectionner une difficulté pour le jeu du Pendu
+	//ClearT()
+	//for {
+	//fmt.Println("Choose a difficulty: easy, medium, hard.")     // Affiche les options de difficulté à l'utilisateur
+	//scanner := bufio.NewScanner(os.Stdin)                       // Crée un scanner pour capturer l'entrée de l'utilisateur depuis la console
+	//scanner.Scan()                                              // Lit l'entrée de l'utilisateur
+	//choix := strings.TrimSpace(strings.ToLower(scanner.Text())) // Normalise l'entrée : enlève les espaces et met en minuscules
+	mots := strings.Fields(choix) // Divise la chaîne d'entrée en mots basés sur les espaces
+	if len(mots) == 1 {           // Vérifie qu'il n'y a qu'un seul mot
+		switch mots[0] { // Compare le mot choisi à des options valides
+		case "easy", "medium", "hard": // Si le choix est valide
+			return mots[0]
+		default:
 			ClearT()
-			fmt.Println("Invalid choice, please enter a single word.")
+			fmt.Println("Invalid choice, please choose between easy, medium, or hard.")
 		}
+	} else {
+		ClearT()
+		fmt.Println("Invalid choice, please enter a single word.")
 	}
+	//}
+	return ""
 }
 
 func ValL(data *DataHang) string { // ValL demande à l'utilisateur de proposer une lettre ou un mot et gère les entrées

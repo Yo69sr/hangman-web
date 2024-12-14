@@ -80,11 +80,6 @@ func Load(filename string) (*DataHang, string, error) { // Load charge les donn�
 	if err != nil {
 		return nil, filename, fmt.Errorf("error while decoding JSON: %v", err) // Retourne une erreur si le décodage échoue
 	}
-	for i := 5; i > 0; i-- {
-		ClearT()
-		fmt.Println("Game loaded from", filename)
-		fmt.Printf("The game will start in %d seconds.", i)
-		time.Sleep(1 * time.Second)
-	}
+
 	return &data, filename, nil // Retourne un pointeur vers la structure data et aucune erreur
 }

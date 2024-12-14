@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu du Pendu</title>
+    <link rel="stylesheet" href="/css/page-2.css">
+</head>
+
+<body>
+    <h1>Bienvenue dans le jeu du Pendu</h1>
+
+    <h2>Mot à deviner : {{ .Word }}</h2>
+    <p>Historique des lettres et mots : {{ .Historic }}</p>
+    <p>Points de vie restants : {{ .Pv }}</p>
+
+    <form method="post" action="/hangman">
+        <input type="text" id="letter" name="letter" maxlength="10" required>
+        <button type="submit">Soumettre</button>
+    </form>
+</body>
+
+</html>
